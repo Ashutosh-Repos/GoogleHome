@@ -1,8 +1,11 @@
+let API_KEY = 'addkey';
+document.addEventListener("onload", ()=>{
+  API_KEY = prompt("Enter openAI API Key");
+});
+
 const form = document.getElementById("chat-form");
 const input = document.getElementById("chat-input");
 const messages = document.getElementById("chat-messages");
-
-const API_KEY = 'addkey';
 /////////////
 // Function to send a message to the OpenAI API
 async function sendMessageToChatGPT(message) {
