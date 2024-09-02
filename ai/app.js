@@ -1,7 +1,5 @@
 let API_KEY = 'addkey';
-document.addEventListener("onload", ()=>{
-  API_KEY = prompt("Enter openAI API Key");
-});
+
 
 const form = document.getElementById("chat-form");
 const input = document.getElementById("chat-input");
@@ -10,7 +8,9 @@ const messages = document.getElementById("chat-messages");
 // Function to send a message to the OpenAI API
 async function sendMessageToChatGPT(message) {
   const url = 'https://api.openai.com/v1/chat/completions';
-  
+  if(API_KEY == 'addkey'){
+    API_KEY = prompt('Enter OpenAI API key');
+  }
   try {
       const response = await axios.post(
           url,
