@@ -8,7 +8,7 @@ const messages = document.getElementById("chat-messages");
 // Function to send a message to the OpenAI API
 async function sendMessageToChatGPT(message) {
   const url = 'https://api.openai.com/v1/chat/completions';
-  if(API_KEY == 'addkey'){
+  if(API_KEY == ''){
     API_KEY = prompt('Enter OpenAI API key');
   }
   try {
