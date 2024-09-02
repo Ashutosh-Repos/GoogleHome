@@ -1,4 +1,4 @@
-let API_KEY = 'addkey';
+let API_KEY = '';
 
 
 const form = document.getElementById("chat-form");
