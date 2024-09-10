@@ -139,7 +139,7 @@
     justify-content: center;
   }
 
-  #chatdiv::after{
+  #page2::after{
     content: "";
     position: absolute;
     height: 2px;
