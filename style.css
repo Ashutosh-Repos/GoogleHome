@@ -139,6 +139,12 @@
     justify-content: center;
   }
 
+  #page2{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
   #page2::after{
     content: "";
     position: absolute;
