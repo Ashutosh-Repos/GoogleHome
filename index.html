@@ -181,18 +181,18 @@
             console.log(printed);
         }
         form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const message = input.value;
-        input.value = "";
-        messages.innerHTML += `<div class="message user-message">
-        <img src="images\\man.png" alt="user icon"> <span>${message}</span>
-        </div>`;
-        // Use axios library to make a POST request to the OpenAI API
-        const reply = await comm(message);
-        //const chatbotResponse = response.data.choices[0].text;
-        messages.innerHTML += `<div class="message bot-message">
-        <img src="images\\chatbot.png" alt="bot icon"> <span>${reply}</span>
-        </div>`;
+            e.preventDefault();
+            const message = input.value;
+            input.value = "";
+            messages.innerHTML += `<div class="message user-message">
+            <img src="images\\man.png" alt="user icon"> <span>${message}</span>
+            </div>`;
+            // Use axios library to make a POST request to the OpenAI API
+            const reply = await comm(message);
+            //const chatbotResponse = response.data.choices[0].text;
+            messages.innerHTML += `<div class="message bot-message">
+            <img src="images\\chatbot.png" alt="bot icon"> <span>${reply}</span>
+            </div>`;
         });
     </script>
       
