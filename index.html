@@ -170,8 +170,8 @@
         import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
         const genAI = new GoogleGenerativeAI('AIzaSyBSrP68dghFV6uhN8OGsqmkkqgKzNUgE24');
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-        const comm = async () => {
-            const prompt = "Write a story about a magic backpack.";
+        const comm = async (prompt) => {
+            //const prompt = "Write a story about a magic backpack.";
             const result = await model.generateContent(prompt);
             const answer = await result.response.text();
             return answer;
@@ -180,10 +180,23 @@
             const printed  = await comm();
             console.log(printed);
         }
-        print();
+        form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const message = input.value;
+        input.value = "";
+        messages.innerHTML += `<div class="message user-message">
+        <img src="images\\man.png" alt="user icon"> <span>${message}</span>
+        </div>`;
+        // Use axios library to make a POST request to the OpenAI API
+        const reply = await comm(message);
+        //const chatbotResponse = response.data.choices[0].text;
+        messages.innerHTML += `<div class="message bot-message">
+        <img src="images\\chatbot.png" alt="bot icon"> <span>${reply}</span>
+        </div>`;
+        });
     </script>
-      <script src="ai\app.js"></script>
-      <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+      //<script src="ai\app.js"></script>
+      //<script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
       <script src="https://mediafiles.botpress.cloud/88c7279f-10ea-47df-871d-cb5cd429a42e/webchat/v2.1/config.js"></script>
 </body>
 </html>
