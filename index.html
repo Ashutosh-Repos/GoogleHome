@@ -176,10 +176,9 @@
             const answer = await result.response.text();
             return answer;
         }
-        const print = async () => {
-            const printed  = await comm();
-            console.log(printed);
-        }
+        const form = document.getElementById("chat-form");
+        const input = document.getElementById("chat-input");
+        const messages = document.getElementById("chat-messages");
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
             const message = input.value;
